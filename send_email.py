@@ -17,7 +17,7 @@ app = Celery('send_email', broker='amqp://guest:guest@localhost:5672//',
 app.conf.beat_schedule = {
     'send-email-task': {
         'task': 'send_email.send_without_attachment',
-        'schedule': timedelta(seconds=30),  # 5 dakika sonra çalıştır
+        'schedule': timedelta(seconds=30),  # 30 saniye sonra çalıştır
         'args': (['omerylmaz346@gmail.com'], 'Subject', 'Text'),
     },
 }
